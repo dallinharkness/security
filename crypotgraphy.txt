@@ -1,0 +1,28 @@
+My cipher idea is to get each letter in the alphabet to equal a number starting at 34 just to make things random.
+
+a = 34
+b = 35
+c = 36
+etc.
+ I love cryptography would equal:
+4245485538365158495348405134494158
+
+Here is the code to make the cipher work.
+
+const cipher = (string) => {
+  const abc = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z',]
+
+  const numbers = ['34','35','36','37','38','39','40','41','42','43','44','45','46','47','48','49','50','51','52','53','54','55','56','57','58','59']
+  const arr = []
+  for(let i = 0; i < string.length; i++){
+    for(let j = 0; j < abc.length; j++){
+      if(string[i] === abc[j]){
+        arr.push(numbers[j])
+      }
+    }
+  }
+
+  return arr.join('')
+}
+
+cipher('i love cryptography')
